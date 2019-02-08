@@ -1,29 +1,33 @@
 ﻿using System;
 
-namespace task3
+namespace ConsoleApp1
 {
     class Program
     {
+        static void PP2(int[] a, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                    Console.Write(a[i]);
+            }
+        }
+
         static void Main(string[] args)
         {
+            int n = int.Parse(Console.ReadLine()); //вводим размер и сразу в интежеры 
+            string s = Console.ReadLine();//для пробела
+            string[] str = s.Split();//делит по пробелам и в массив его
 
+            int[] a = new int[n];
 
-            int d = int.Parse(Console.ReadLine());/*считываю d  в консоле сразу как интежер*/
-            int[] a = new int[d];   /*создаю массив с размером d*/
-
-            string s = Console.ReadLine();//считываем стринг чтобы он мог прочитать числа
-            string[] arr = s.Split(' ');//идет стринговый массив куда идут числа через пробел 
-
-            for (int i = 0; i < d; i++)
+            for (int i = 0; i < n; i++)
             {
-              for (int k = 0; k < 2; k++)
-                   {
-                    Console.Write(arr[i]+' ');//выводим в консоль число до 2 значений .потом переходит к следующему
-                }
-
+                a[i] = int.Parse(str[i]);
             }
-            
+
+            PP2(a, n);//вызываем метод (функцию)пп2
+
         }
     }
 }
-
